@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="Ko">
+    <head>
+        <meta charset="utf-8"
+        <meta name="" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/custom/custom.css">
+        <style>
+            body{
+                margin: 200px;
+                padding: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap"><center>
+            <div class="top">
+                <img src="/custom/img/apple-tree.png" width="200px"><br>
+                <font size="50px"><b>Apple count</b></font>
+                <p>Count the number of apples in the apple tree</p>
+            </div>
+            <br><br>
+            <div class="middle">
+
+                <div id="image_container"></div>
+                <input type="file" name="file" id="file" style="margin: 10px;" accept="image/*" onchange="setThumbnail(event);"><br><br><br>
+                <button class="reset" onClick="window.location.reload()">Reset</button><br>
+
+                <button class="count"><b>count</b></button>
+
+                <script>
+                    var imageCount = 0;
+                    function setThumbnail(event) {
+                      var reader = new FileReader();
+                      
+                      reader.onload = function(event) {
+                        var img = document.createElement("img");
+                        img.setAttribute("src", event.target.result);
+                        img.setAttribute("width", "500");
+                        document.querySelector("div#image_container").appendChild(img);
+                        imageCount++;
+                        if (imageCount > 2) {
+                          alert("사진은 두 장만 올려주세요!");
+                          document.querySelector("div#image_container").removeChild(img);
+                          imageCount--;
+                        }
+                      };
+                      reader.readAsDataURL(event.target.files[0]);
+                    }
+                  </script>
+            </div>
+            <div class="bottom">
+                
+            </div>
+        </center></div>
+    </body>
+</html>

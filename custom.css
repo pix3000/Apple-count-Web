@@ -1,0 +1,42 @@
+button.count{
+    border: 0;
+    outline: none;
+    font-size: 40px;
+    margin: 30px;
+    background: rgb(39, 95, 250);
+    color: white;
+    padding: 20px 200px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  button.count:hover {
+    color: white;
+    background: orange;
+  }
+
+
+input[type=file]::file-selector-button {
+  width:100px;
+  height: 30px;
+  background: #fff;
+  border: 1px solid rgb(77,77,77);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  &:hover {
+    background: rgb(77,77,77);
+    color: #fff;
+  }
+}  
+
+
+button.reset{
+    width: 100px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid rgb(77,77,77);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+
+}
