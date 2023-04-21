@@ -8,14 +8,12 @@ body {
   display: flex;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
   background-color: #ffffff;
 }
 
 .form-signin {
   width: 100%;
-  max-width: 330px;
+  max-width: 1000px;
   padding: 10px;
   margin: auto;
 }
