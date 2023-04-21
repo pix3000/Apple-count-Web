@@ -17,7 +17,7 @@
       }
 
       .preview-img {
-        width: 500px;
+        width: 300px;
         align-items: center;
       }
 
@@ -28,29 +28,31 @@
   </head>
   <body class="text-center">
     <form class="form-signin" method=post enctype=multipart/form-data>
-      <!--
-      <img class="mb-4" src="/static/pytorch.png" alt="" width="72">
-        <h1 class="h3 mb-3 font-weight-normal">Upload any image</h1>
-      -->
-      
+
         <div class="form-group">
           <label for="inputfile1" style="font-size: 30px;"><b>Front Image</b></label>
+          <br>
           <input type="file" name="file1" class="form-control-file1" id="inputfile1" accept=".png, .jpg"  onchange="setThumbnail1(event, 'inputfile1')">
           <br>
           <div id="inputfile1_preview"></div>
         </div><br>
+
         <div class="form-group">
           <label for="inputfile2" style="font-size: 30px;"><b>Back Image</b></label>
+          <br>
           <input type="file" name="file2" class="form-control-file2" id="inputfile2" accept=".png, .jpg"  onchange="setThumbnail2(event, 'inputfile2')">
           <br>
           <div id="inputfile2_preview"></div>
         </div><br>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit" >Upload</button>
+        <center>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" style="margin: 50px; width: 300px;">Count</button>
+        </center>
         <br><br>
 
         <div class="result">
-          <p>Count: {{ all_count }}</p> 
+          {% if all_count %}
+            <h3><b>Count:</b> {{ all_count }} apples</h3> 
+          {% endif %}
         </div>
     </form>
 
@@ -101,8 +103,6 @@
 
         reader.readAsDataURL(event.target.files[0]);
       }
-      
-
 
     </script>
   </body>
