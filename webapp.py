@@ -7,6 +7,8 @@ import datetime
 import torch
 from flask import Flask, render_template, request, redirect
 
+import nonlin_reg
+
 app = Flask(__name__)
 
 DATETIME_FORMAT = "%Y-%m-%d_%H-%M"
@@ -45,7 +47,8 @@ def predict():
         f_count =  str(f_results).split()[-17] #Count number of apples
         b_count =  str(b_results).split()[-17]
 
-        all_count =  int((int(f_count) + int(b_count)) * 1.8)
+        all_count =  int((int(f_count) + int(b_count)))
+        all_count = nonlin_reg.nonl_reg(all_count)
         print(all_count)
 
         f_results.render()
