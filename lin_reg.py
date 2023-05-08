@@ -1,7 +1,7 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-def nonl_reg(input):
+def l_reg(input):
     x_data = np.array([115, 117, 140, 115, 116, 127, 121, 121, 115, 103,
                 114, 90, 24, 98, 110, 119, 121, 108, 141, 78, 93, 98, 88, 141, 84])
     y_data = np.array([168, 164, 192, 136, 146, 142, 132, 199, 127, 131,
