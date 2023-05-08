@@ -7,7 +7,7 @@ import datetime
 import torch
 from flask import Flask, render_template, request, redirect
 
-import nonlin_reg
+import lin_reg
 
 app = Flask(__name__)
 
@@ -48,7 +48,7 @@ def predict():
         b_count =  str(b_results).split()[-17]
 
         all_count =  int((int(f_count) + int(b_count)))
-        all_count = nonlin_reg.nonl_reg(all_count)
+        all_count = lin_reg.l_reg(all_count)
         print(all_count)
 
         f_results.render()
