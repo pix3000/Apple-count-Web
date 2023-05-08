@@ -14,6 +14,8 @@ model.fit(x_data.reshape(-1, 1), y_data)
 # predict y-values for the given x-values
 y_pred = model.predict(x_data.reshape(-1, 1))
 
+print('Regression equation: y = {:.3f}x + {:.3f}'.format(model.coef_[0], model.intercept_))
+
 # plot the data points and the regression line
 plt.scatter(x_data, y_data)
 plt.plot(x_data, y_pred, color='red')
